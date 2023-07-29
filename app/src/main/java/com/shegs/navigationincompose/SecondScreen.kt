@@ -37,7 +37,11 @@ fun PreviousButton(navController: NavController){
         ){
             Button(
                 onClick = {
-                          navController.popBackStack()
+                          navController.navigate("firstScreen") {
+                              popUpTo("firstScreen"){
+                                  inclusive = true
+                              }
+                          }
                 },
             ) {
                 Text(text = "Previous Screen")
